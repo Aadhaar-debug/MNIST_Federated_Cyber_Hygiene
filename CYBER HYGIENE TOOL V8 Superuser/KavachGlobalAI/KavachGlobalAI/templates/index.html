@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Global AI Interface</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic styles for layout and appearance */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.input-section, .output-section {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Global AI Interface</h1>
+  </header>
+  
+  <main>
+    <section class="input-section">
+      <h2>Input Form for Local AI Outputs</h2>
+      <form id="local-ai-input-form">
+        <!-- Input fields for local AI outputs -->
+        <label for="output1">Output 1:</label>
+        <input type="text" id="output1" name="output1">
+        
+        <label for="output2">Output 2:</label>
+        <input type="text" id="output2" name="output2">
+        
+        <!-- Add more fields as needed -->
+        
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    
+    <section class="output-section">
+      <h2>Global AI Output</h2>
+      <div id="global-ai-output">
+        <!-- Display the output from the global AI -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Global AI Interface</p>
+  </footer>
+</body>
+</html>

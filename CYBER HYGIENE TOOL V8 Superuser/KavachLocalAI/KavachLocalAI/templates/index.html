@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data & Model Training</title>
+  <!-- Add any necessary CSS stylesheets or frameworks -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset some default browser styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Main content styles */
+main {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+section {
+  margin-bottom: 30px;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Links styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+
+<body>
+    <header>
+        <h1>KAVACH LOCAL AI FOR DATA ACCUMULATION AND MODEL TRAINING</h1>
+    </header>
+  
+    <main>
+        <!-- Display CSV data -->
+        <section class="csv-data">
+            <h2>CSV Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Request Method</th>
+                        <th>ETA</th>
+                        <!-- Add other headers if present -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through data_list to display CSV data -->
+                    {% for data in data_list %}
+                        <tr>
+                            <td>{{ data.URL }}</td>
+                            <td>{{ data.RequestMethod }}</td>
+                            <td>{{ data.ETA }}</td>
+                            <!-- Add other data fields if present -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Display Model Training Information -->
+        <section class="model-training">
+            <h2>Model Training</h2>
+            <div class="training-info">
+                <!-- Display training information here -->
+                <!-- Example: Replace with actual model training information -->
+                <p>Model Accuracy: 95%</p>
+                <p>Training Loss: 0.05</p>
+                <!-- Add other training metrics -->
+            </div>
+        </section>
+    </main>
+  
+    <!-- Add any necessary JavaScript scripts -->
+    <script src="scripts.js"></script>
+</body>
+
+
+
+
+
+<script>
+    fetch('/api/get_csv_data/')
+  .then(response => response.json())
+  .then(data => {
+    // Assuming data is an array of objects with CSV data
+    const tableBody = document.querySelector('.csv-data tbody');
+
+    data.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+      
+        <td>${row.requestId}</td>
+        <td>${row.url}</td>
+        <td>${row.statusCode}</td>
+        <!-- Add other cells -->
+      `;
+      tableBody.appendChild(tr);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching CSV data:', error);
+  });
+
+</script>
+</html>
